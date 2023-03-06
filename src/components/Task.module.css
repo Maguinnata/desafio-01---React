@@ -1,0 +1,148 @@
+.taskList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 0.75rem;
+
+    width: 46rem;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.taskContent {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction:row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    gap: 0.25rem;
+
+    width: 46rem;
+    height:4.5rem;
+
+    background: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+    border-radius: 0.5rem;
+
+    flex:none;
+    order:0;
+    align-self: stretch;
+    flex-grow: 0
+}
+
+.taskCheck {
+    display: flex;
+    justify-content:center;
+    
+    position: relative;
+    gap: 0.75rem;
+    margin: 0px 12px 32px 16px;
+    
+    cursor: pointer;
+}
+
+.taskCheck input {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+.taskCheck:hover input ~ .checkIcon {
+    border-color: var(--blue-500);
+    background-color: rgba(30,111,159, 0.5);
+}
+
+.taskCheck input:checked ~ .checkIcon {
+    border-color: var(--purple-500);
+    background-color: var(--purple-500);
+}
+
+.taskCheck input:checked ~ .checkIcon:after {
+    display:block;
+}
+
+.taskCheck input:checked:hover ~ .checkIcon {
+    border-color: var(--purple-300);
+    background-color: var(--purple-300);
+}
+
+.taskCheck .checkIcon:after {
+    left: 0.48rem;
+    bottom: 0.35rem;
+    width: 0.37rem;
+    height: 0.75rem;
+    border: solid white;
+    border-width: 0 0.125rem 0.125rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    color: var(--gray-100);
+}
+
+.checkIcon {
+    position:absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    background-color: transparent;
+    border: 1px solid var(--blue-300);
+    border-radius: 1.5rem;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.checkIcon:after {
+    content: "";
+    position:absolute;
+    display:none;
+}
+
+.taskContent p {
+    width: 39.5rem;
+    height: 2.5rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+
+    color: var(--gray-100);
+    margin-left: 0.75rem;
+
+    flex: none;
+    order:1;
+    flex-grow: 1;
+}
+
+.taskContent button {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius:0.25rem;
+
+    background:transparent;
+    color: var(--gray-300);
+    border:transparent;
+
+    flex:none;
+    order:2;
+    flex-grow: 0;
+
+    cursor:pointer;
+}
+
+.taskContent button:hover {
+    background: var(--gray-400);
+    border-radius: 0.25rem;
+    color: var(--red)
+}
